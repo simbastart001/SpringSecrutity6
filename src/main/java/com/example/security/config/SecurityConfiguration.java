@@ -24,7 +24,7 @@ public class SecurityConfiguration {
         httpSecurity
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers() // You need to specify paths here
+                        .requestMatchers("/api/v1/auth/**") // You need to specify paths here
                         .permitAll()
                         .anyRequest()
                         .authenticated()
